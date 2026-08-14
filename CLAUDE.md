@@ -4,11 +4,26 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project status
 
-This project is brand new and currently empty. No code, structure, or tooling exists yet.
+No application code yet — the repo currently has the Python environment and tooling scaffolded (venv, requirements, .env), but no source modules. The user will be feeding additional context and requirements incrementally as the project develops, rather than up front.
 
 ## Project intent
 
-A stock prediction project that will combine multiple approaches/data sources into a single system. The user will be feeding additional context and requirements incrementally as the project develops, rather than up front.
+Predict stock prices by combining multiple signals/approaches into one system:
+- Volatility
+- News sentiment
+- ARIMA
+- A mix model (combining the above)
+
+## Setup
+
+- Python 3.12, virtualenv at `venv/` (gitignored).
+- Activate with `source venv/bin/activate`, install deps with `pip install -r requirements.txt`.
+- `requirements.txt`: pandas, numpy, statsmodels (ARIMA), scikit-learn, requests, python-dotenv, finnhub-python.
+- `.env` (gitignored) holds `FINNHUB_API_KEY` — load it with python-dotenv rather than hardcoding.
+
+## MCP tooling
+
+A `finnhub` HTTP MCP server (`https://mcp.finnhub.io/mcp`) is configured locally for this project, for pulling market data.
 
 ## Guidance for future Claude instances
 
